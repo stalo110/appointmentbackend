@@ -1,12 +1,16 @@
 import { createPool } from "mysql2";
-export const pool = createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'appointment_db',
-    waitForConnections: true,
-    connectionLimit: 10,
-}).promise();
+import dotenv from "dotenv";
+
+dotenv.config();
+export const pool = createPool({  
+    host: process.env.DATABASE_HOST, // Use environment variable for host  
+    user: process.env.DATABASE_USER, // Use environment variable for user  
+    password: process.env.DATABASE_PASSWORD, // Use environment variable for password  
+    database: process.env.DATABASE_NAME, // Use environment variable for database  
+    waitForConnections: true,  
+    connectionLimit: 10,  
+}).promise(); 
+
 
 // Optional connection test
 export const connectDB = async () => {
