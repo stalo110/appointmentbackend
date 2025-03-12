@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import { connectDB } from "./config/db";  
+// import { connectDB } from "./config/db";  
 import userRoutes from "./routes/userRoutes";
 import adminRoutes from "./routes/adminRoutes";
 import dotenv from "dotenv"
@@ -12,12 +12,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Database connection test at startup
-connectDB().then(() => {
-    console.log("Database check complete.");
-}).catch(err => {
-    console.error("Database check failed:", err);
-    process.exit(1); // Stop app if DB connection fails
-});
+// connectDB().then(() => {
+//     console.log("Database check complete.");
+// }).catch(err => {
+//     console.error("Database check failed:", err);
+//     process.exit(1); // Stop app if DB connection fails
+// });
 
 // Routes
 app.use("/api/users", userRoutes);
