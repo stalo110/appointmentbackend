@@ -1,0 +1,270 @@
+{
+    "info": {
+        "_postman_id": "3a16c0a8-e281-490b-ab49-6a08dcfa4186",
+        "name": "Booking",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "register",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:5000/api/users/register",
+                    "path": [
+                        "api",
+                        "users",
+                        "register"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n\"name\": \"Stanley Offor\",\n\"email\": \"offorstanley@gmial.com\", \n\"password\": \"stalo001\"  \n}\n"
+                }
+            }
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:5000/api/users/login",
+                    "path": [
+                        "api",
+                        "users",
+                        "login"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n\"email\": \"offorstanley@gmial.com\", \n\"password\": \"stalo001\"  \n}\n"
+                }
+            }
+        },
+        {
+            "name": "Book Appointment",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:5000/api/users/appointments",
+                    "path": [
+                        "api",
+                        "users",
+                        "appointments"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{ \n  \"userId\": 1, \n  \"date\":\"02/03/2025\", \n  \"timeSlot\": \"13:40AM\"\n  \n}"
+                }
+            }
+        },
+        {
+            "name": "Cancel Booking",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:5000/api/users/appointments/1",
+                    "path": [
+                        "api",
+                        "users",
+                        "appointments",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Get All Appointments",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:5000/api/admin/appointments",
+                    "path": [
+                        "api",
+                        "admin",
+                        "appointments"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Create Time Slot",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:5000/api/admin/timeslots",
+                    "path": [
+                        "api",
+                        "admin",
+                        "timeslots"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"date\": \"2025/02/03\", \n  \"startTime\": \"11:30am\", \n  \"endTime\": \"13:30am\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Delete Time Slot",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:5000/api/admin/timeslots/1",
+                    "path": [
+                        "api",
+                        "admin",
+                        "timeslots",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                }
+            }
+        },
+        {
+            "name": "Assign Role",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:5000/api/admin/users/assign-role/1",
+                    "path": [
+                        "api",
+                        "admin",
+                        "users",
+                        "assign-role",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"role\": \"Admin\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Edit Timeslot",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:5000/api/admin/timeslots/2",
+                    "path": [
+                        "api",
+                        "admin",
+                        "timeslots",
+                        "2"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "\n  {\n  \"date\": \"2025/02/03\", \n  \"startTime\": \"11:30am\", \n  \"endTime\": \"13:30am\",\n  \"availability\": \"Booked\"\n}\n"
+                }
+            }
+        },
+        {
+            "name": "Generate Report",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:5000/api/admin/agernerate-report?startDate=2025-03-02&endDate=2025-03-02",
+                    "query": [
+                        {
+                            "key": "startDate",
+                            "value": "2025-03-02"
+                        },
+                        {
+                            "key": "endDate",
+                            "value": "2025-03-02"
+                        }
+                    ],
+                    "variable": [],
+                    "path": [
+                        "api",
+                        "admin",
+                        "agernerate-report"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000"
+                }
+            }
+        }
+    ]
+}
